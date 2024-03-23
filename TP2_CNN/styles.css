@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 body {
@@ -10,17 +11,48 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Make all links white because why blue */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #999;
+}
+
+/* make all buttons better */
+
+button {
+  color: white;
+  background: transparent;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #404040;
+}
+
+/*
+==========================
+          Header          
+==========================
+*/
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 50px;
   background-color: black;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0 20px;
 }
 
 .left-section {
@@ -35,7 +67,8 @@ body {
 }
 
 .logo {
-  width: 30px;
+  width: 50px;
+  margin: 0 10px;
 }
 
 .links {
@@ -57,4 +90,148 @@ body {
   color: white;
   text-decoration: none;
   margin-right: 20px;
+}
+
+/*
+==========================
+         Side Bar
+==========================
+*/
+
+.sidebar {
+  position: fixed;
+  border-top: 2px solid #333;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+  z-index: 999;
+  display: none; /* Initially hidden */
+}
+
+.sidebar.open {
+  display: block; /* Display sidebar when open class is added */
+}
+
+.sidebar-content a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+/*
+==========================
+        Search bar
+==========================
+*/
+
+.sidebar-content {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-container {
+  color: black;
+  float: right;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.search-container input[type="text"] {
+  padding: 6px;
+  width: 95%;
+  font-size: 17px;
+  color: black;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-container button {
+  float: right;
+  width: 5%;
+  padding: 6px 10px;
+  border-radius: 0;
+  background: #fff;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+/* test */
+.sidebar-content {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  padding: 20px;
+  overflow-y: auto; /* Add scrollbar if content overflows */
+}
+
+.search-container {
+  color: black;
+  float: right;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  padding: 6px;
+  width: 95%;
+  font-size: 17px;
+  color: black;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-container button {
+  float: right;
+  width: 5%;
+  padding: 6px 10px;
+  border-radius: 0;
+  background: #fff;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links > li {
+  margin-bottom: 10px;
+}
+
+.links > li > a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links > li > ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.links > li > ul > li > a {
+  color: white;
+  text-decoration: none;
 }
