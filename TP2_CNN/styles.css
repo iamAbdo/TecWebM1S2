@@ -55,6 +55,10 @@ button:hover {
   padding: 0 20px;
 }
 
+#space {
+  height: 50px;
+}
+
 .left-section {
   display: flex;
   align-items: center;
@@ -234,4 +238,117 @@ button:hover {
 .links > li > ul > li > a {
   color: white;
   text-decoration: none;
+}
+
+/* Article */
+
+.example-articles {
+  max-width: 600px;
+  padding: 20px;
+}
+
+.example-articles h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.example-articles ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.example-articles li {
+  margin-bottom: 10px;
+}
+
+.example-articles li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.example-articles li a:hover {
+  color: #666;
+}
+
+.example-articles hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+.article-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.footer-links {
+  display: flex;
+}
+
+.column {
+  margin-right: 20px;
+}
+
+.column:last-child {
+  margin-right: 0;
+}
+
+.column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column ul li {
+  margin-bottom: 5px;
+}
+
+.column ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.copyright p {
+  margin: 5px 0;
 }
