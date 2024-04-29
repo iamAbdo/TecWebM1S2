@@ -35,8 +35,10 @@
             <div class="time">
                 <label for="years">Years: </label>
                 <input type="number" id="years">
-                <label for="months">Months: </label>
-                <input type="number" id="months">
+
+                <!-- to be added later
+                <label for="months">Months: </label> 
+                <input type="number" id="months"> -->
             </div>
 
             <button type="button" onclick="calculate()">submit</button>
@@ -47,6 +49,21 @@
             <hr>
             <p class="result">Total: <span id="total-amount">$0.00</span></p>
             <p class="result">Profit: <span id="profit-amount">$0.00</span></p>
+
+            <table id="interest-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Interest This Year</th>
+                        <th>Interset Sum</th>
+                        <th>Total Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be added dynamically by JavaScript -->
+                </tbody>
+            </table>
+
 
         </div>
 

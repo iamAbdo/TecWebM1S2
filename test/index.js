@@ -19,6 +19,7 @@ function selectCurrency(currency) {
 function calculate() {
     const totalAmountSpan = document.getElementById("total-amount");
     const profitSpan = document.getElementById("profit-amount");
+    const interestTableBody = document.querySelector("#interest-table tbody");
     const principalInput = document.getElementById("principal");
     const rateInput = document.getElementById("rate");
     const yearsInput = document.getElementById("years");
@@ -49,12 +50,36 @@ function calculate() {
         monthsInput.value = 0;
     }
 
+    // Clear previous table rows
+    interestTableBody.innerHTML = '';
+
     // Convert months into a fraction of a year
     const monthsInYears = months / 12;
 
-    // Calculate the total amount including months
-    const totalYears = years + monthsInYears;
-    const totalAmount = principal * Math.pow((1 + rate), totalYears);
+    let totalInterest = 0;
+    let totalAmount = principal;
+
+    for (let i = 1; i <= years; i++) {
+        // Calculate interest for this year
+        const interestThisYear = totalAmount * rate;
+
+        // Add interest for this year to total interest
+        totalInterest += interestThisYear;
+
+        // Update total amount with interest for this year
+        totalAmount += interestThisYear;
+
+        // Create a new row for the table
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${i}</td>
+            <td>${interestThisYear.toLocaleString(undefined, { style: "currency", currency: selectedCurrency })}</td>
+            <td>${totalInterest.toLocaleString(undefined, { style: "currency", currency: selectedCurrency })}</td>
+            <td>${totalAmount.toLocaleString(undefined, { style: "currency", currency: selectedCurrency })}</td>`;
+
+        // Append the new row to the table body
+        interestTableBody.appendChild(newRow);
+    }
 
     // Calculate the profit
     const profit = totalAmount - principal;
