@@ -16,13 +16,14 @@
 
         <form>
             <div class="button-row">
-                <button class="button selected">$</button>
-                <button class="button">Euro</button>
-                <button class="button">DZD</button>
-                <button class="button">DZD</button>
-                <button class="button">DZD</button>
-                <!-- Add more buttons here if needed -->
+
+                <button id="USD" type="button" class="button selected" onclick="selectCurrency('USD')">$</button>
+                <button id="EUR" type="button" class="button" onclick="selectCurrency('EUR')">€</button>
+                <button id="GBP" type="button" class="button" onclick="selectCurrency('GBP')">£</button>
+                <button id="JPY" type="button" class="button" onclick="selectCurrency('JPY')">¥</button>
+                <button id="INR" type="button" class="button" onclick="selectCurrency('INR')">₹</button>
             </div>
+
             <br>
 
             <label for="principal">Initial investement :</label>
