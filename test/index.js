@@ -23,12 +23,12 @@ function calculate() {
     const principalInput = document.getElementById("principal");
     const rateInput = document.getElementById("rate");
     const yearsInput = document.getElementById("years");
-    const monthsInput = document.getElementById("months");
+    //const monthsInput = document.getElementById("months");
 
     let principal = Number(principalInput.value);
     let rate = Number(rateInput.value / 100);
     let years = Number(yearsInput.value);
-    let months = Number(monthsInput.value);
+    //let months = Number(monthsInput.value);
 
     if (principal < 0 || isNaN(principal)) {
         principal = 0;
@@ -45,16 +45,17 @@ function calculate() {
         yearsInput.value = 0;
     }
 
+    /*
     if (months < 0 || isNaN(months)) {
         months = 0;
         monthsInput.value = 0;
-    }
+    }*/
 
     // Clear previous table rows
     interestTableBody.innerHTML = '';
 
     // Convert months into a fraction of a year
-    const monthsInYears = months / 12;
+    //const monthsInYears = months / 12;
 
     let totalInterest = 0;
     let totalAmount = principal;
